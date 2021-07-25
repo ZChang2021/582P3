@@ -32,7 +32,7 @@ def shutdown_session(response_or_exc):
 
 def log_message(d)
     # Takes input dictionary d and writes it to the Log table
-    g.session.add(logtime = datetime.now(), message = json.dumps(d))
+    g.session.add(Log(logtime = datetime.now(), message = json.dumps(d)))
     g.session.commit()
     return
 
